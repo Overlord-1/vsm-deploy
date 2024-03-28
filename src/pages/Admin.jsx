@@ -7,10 +7,13 @@ const Admin = () => {
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const token = localStorage.getItem('authTokenAdmin');
+  const URL = process.env.REACT_APP_API_URL;
+
+
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/auth/login-admin', {
+      const response = await axios.post(`${URL}/auth/login-admin`, {
         "email": email,
         "password": password
       });
@@ -32,7 +35,7 @@ const Admin = () => {
       }
     }
     try {
-      await axios.post('http://localhost:8080/admin/start-round', {}, config);
+      await axios.post(`${URL}/admin/start-round`, {}, config);
       // handle success
       console.log('Round started successfully');
     } catch (error) {
@@ -48,7 +51,7 @@ const Admin = () => {
       }
     }
     try {
-      await axios.post('http://localhost:8080/admin/start-game', {}, config);
+      await axios.post(`${URL}/admin/start-game`, {}, config);
       // handle success
       console.log('Game started successfully');
     } catch (error) {
