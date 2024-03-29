@@ -228,7 +228,7 @@ const News = () => {
     else if (e.target.alt === "cards" && pageState !== 4) {
       setPageState(2);
     }
-    else if (e.target.alt === "leaderboard" && pageState !== 4) {
+    else if (e.target.alt === "leaderboard") {
       setPageState(3);
     }
   }
