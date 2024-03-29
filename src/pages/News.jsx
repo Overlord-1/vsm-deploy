@@ -251,7 +251,7 @@ const News = () => {
             <Header text={"VSM"} />
 
             <h1 className="text-[#6cff73] max-w-[90%] text-center mx-auto rounded-lg font-bold bg-[#1E1F26] p-4 text-2xl my-5 px-5 md:text-4xl sm:text-2xl ">
-              Funds = ₹ {funds}
+              Funds = ₹ {funds.toLocaleString("en-IN")}
             </h1>
 
             <div className="row1 flex flex-col md:grid-cols-2 ">

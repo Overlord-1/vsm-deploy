@@ -142,7 +142,7 @@ const NewsCard = ({ name, stockprice, funds, news1, news2, onFundsUpdate }) => {
           <div className="name  text-3xl text-white font-bold">{name}</div>
           <div className="name  text-3xl text-white">₹ {stockprice}</div>
         </div>
-        <div className="row2 flex justify-between text-white mt-20">
+        <div className="row2 flex justify-between text-white mt-3">
           <div className="ml-2">
             <div className="newsList">
               <ul className="list-decimal mb-5">
@@ -150,7 +150,7 @@ const NewsCard = ({ name, stockprice, funds, news1, news2, onFundsUpdate }) => {
                 {/* <li className="mt-3">{news2}</li> */}
               </ul>
             </div>
-            <label htmlFor="textInput" className="text-xl opacity-50 mr-2 -ml-4 mt-4">
+            <label htmlFor="textInput" className="text-xl opacity-50 mr-2 -ml-4 mt-2">
               Qty:
             </label>
             <input
@@ -194,7 +194,7 @@ const NewsCard = ({ name, stockprice, funds, news1, news2, onFundsUpdate }) => {
               </div>
             )}
 
-            <div className="flex items-center m-[2.25rem] totaldiv">
+            <div className="flex items-center mx-[2.25rem] totaldiv">
               {/* <label className="mr-3">Total Cost of shares:</label> */}
               <div className="text-2xl font-mono mr-2 text-[#6cff73]">₹</div>
               <div className="text-2xl font-mono  text-[#6cff73]">

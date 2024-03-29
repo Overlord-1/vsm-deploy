@@ -79,7 +79,9 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
   const [newContent, setContent] = useState(content);
   const [usedOnce, setUsedOnce] = useState(false);
   const [success,setSuccess] = useState(false);
+  const [isMKPDisabled, setMKPDisabled] = useState(false);
 
+  const URL = process.env.REACT_APP_API_URL; 
   const [amount, setAmount] = useState('');
   const [stockSymbol, setStockSymbol] = useState('');
 
@@ -94,7 +96,7 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
         },
       };
       setIsLoading(true);
-      const response = await axios.post("http://localhost:8080/game/powerup/stock-betting", {
+      const response = await axios.post(`${URL}/game/powerup/stock-betting`, {
         stockBettingAmount: amount,
         stockBettingPrediction: "UP",
         stockBettingLockedSymbol: stockSymbol,
@@ -116,7 +118,7 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
         },
       };
       setIsLoading(true);
-      const response = await axios.post("http://localhost:8080/game/powerup/stock-betting", {
+      const response = await axios.post(`${URL}/game/powerup/stock-betting`, {
         stockBettingAmount: amount,
         stockBettingPrediction: "DOWN",
         stockBettingLockedSymbol: stockSymbol,
@@ -140,7 +142,7 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
       };
       setIsLoading(true);
 
-      const response = await axios.post(`http://localhost:8080/game/powerup/${encodeURIComponent(powerUpTitle)}`, {}, config);
+      const response = await axios.post(`${URL}/game/powerup/${encodeURIComponent(powerUpTitle)}`, {}, config);
       setIsLoading(false);
       setUsedOnce(true);
       setSuccess(true);
@@ -153,6 +155,10 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
         setContent(response.data.data);
         setUsedOnce(true);
         
+      }
+      if(title === "Muft Ka paisa")
+      {
+        setMKPDisabled(true);
       }
     } catch (error) {
       console.error("Error while using power up:", error);
@@ -222,7 +228,7 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
                   <button onClick={handleBetDown} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-3 m-3">DOWN</button>
                 </div>
                 : title === "Muft Ka paisa"
-                  ? <button onClick={() => handleUsePowerUp("muft-ka-paisa")} disabled={isLoading} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-10 m-3">
+                  ? <button onClick={() => handleUsePowerUp("muft-ka-paisa")} disabled={isLoading || isMKPDisabled} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-10 m-3">
                     {isLoading ? "Loading..." : "Use"}
                   </button>
                   : <button onClick={() => handleUsePowerUp("insider-trading")} disabled={isLoading} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-10 m-3">
