@@ -212,22 +212,23 @@ const Accordion = ({ i, expanded, setExpanded, title, content }) => {
 
             {success && <p className="text-green-500">Power Up Applied</p>}
             {
-              title === "Market Gambit"
-                ? <div className='flex'>
-                  <button onClick={handleBetUp} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-3 m-3">UP</button>
+              // title === "Market Gambit"
+              //   ? <div className='flex'>
+              //     <button onClick={handleBetUp} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-3 m-3">UP</button>
 
-                  <input onChange={(e) => setAmount(e.target.value)} value={amount} type="number" placeholder="Amount" className="block text-black font-bold bg-white p-3 rounded-lg w-[50px] my-3" />
-                  <input value={stockSymbol}
-                          onChange={(e) => setStockSymbol(e.target.value)} 
-                          type="text" 
-                          placeholder="Stock" 
-                          className="block text-black font-bold bg-white p-3 rounded-lg w-[50px] mx-2 my-3"
-                   />
+              //     <input onChange={(e) => setAmount(e.target.value)} value={amount} type="number" placeholder="Amount" className="block text-black font-bold bg-white p-3 rounded-lg w-[50px] my-3" />
+              //     <input value={stockSymbol}
+              //             onChange={(e) => setStockSymbol(e.target.value)} 
+              //             type="text" 
+              //             placeholder="Stock" 
+              //             className="block text-black font-bold bg-white p-3 rounded-lg w-[50px] mx-2 my-3"
+              //      />
 
 
-                  <button onClick={handleBetDown} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-3 m-3">DOWN</button>
-                </div>
-                : title === "Muft Ka paisa"
+              //     <button onClick={handleBetDown} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-3 m-3">DOWN</button>
+              //   </div>
+              //   :
+                   title === "Muft Ka paisa"
                   ? <button onClick={() => handleUsePowerUp("muft-ka-paisa")} disabled={isLoading || isMKPDisabled} className="block text-black font-bold bg-[#6cff73] p-3 rounded-lg px-10 m-3">
                     {isLoading ? "Loading..." : "Use"}
                   </button>

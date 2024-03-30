@@ -1,0 +1,38 @@
+[
+    {
+      "roundIntorduced": 1,
+      "symbol": "NGI",
+      "volatility":4,
+      "price": 600
+    },
+    {
+      "roundIntorduced": 1,
+      "symbol": "RTD",
+      "volatility": 7,
+      "price": 450
+    },
+    {
+      "roundIntorduced": 1,
+      "symbol": "AV",
+      "volatility": 3,
+      "price": 430
+    },
+    {
+      "roundIntorduced": 1,
+      "symbol": "SMS",
+      "volatility": -2,
+      "price": 500
+    },
+    {
+      "roundIntorduced": 2,
+      "symbol": "AQC",
+      "volatility": 20,
+      "price": 700
+    },
+    {
+      "roundIntorduced": 4,
+      "symbol": "VCI",
+      "volatility": 25,
+      "price": 400
+    }
+  ]

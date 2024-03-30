@@ -8,7 +8,6 @@ const PowerCard = () => {
  const [expanded, setExpanded] = useState(false);
 
  const accordionItems = [
-  { title: "Market Gambit" ,content:["Paisa double karne ka CHANCE "]},  
   { title: "Muft Ka paisa", content: ["Get an instant financial boost! Activate this power card to receive a generous infusion of extra funds into your account, providing you with the capital needed to make bold investment moves."] },
     { title: "Insider Trading",content:["Gain insights about the FUTURE !!"] },
     ,
